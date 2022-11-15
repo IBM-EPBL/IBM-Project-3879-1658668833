@@ -7,12 +7,12 @@ from sklearn.preprocessing import LabelEncoder
 import requests
 
 # # NOTE: you must manually set API_KEY below using information retrieved from your IBM Cloud account.
-# API_KEY = "H5Q0G0v6zW7fnqZnfUFRFTmP1sREAzQPutBtfvXP2yjM"
-# token_response = requests.post('https://iam.cloud.ibm.com/identity/token', data={
-#                                "apikey": API_KEY, "grant_type": 'urn:ibm:params:oauth:grant-type:apikey'})
-# mltoken = token_response.json()["access_token"]
-# header = {'Content-Type': 'application/json',
-#           'Authorization': 'Bearer ' + mltoken}
+ API_KEY = "H5Q0G0v6zW7fnqZnfUFRFTmP1sREAzQPutBtfvXP2yjM"
+token_response = requests.post('https://iam.cloud.ibm.com/identity/token', data={
+                            "apikey": API_KEY, "grant_type": 'urn:ibm:params:oauth:grant-type:apikey'})
+mltoken = token_response.json()["access_token"]
+ header = {'Content-Type': 'application/json',
+           'Authorization': 'Bearer ' + mltoken}
 
 
 app = Flask(__name__)  # initiate flask app
